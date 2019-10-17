@@ -11,11 +11,9 @@ public class Dwarf extends Player implements IWeapon {
         this.weapon = weapon;
     }
 
-//    public void attackPlayer(Player enemy, IWeapon weapon) {
-//
-//        this.healthPoints -=
-//        player.setHealth(weapon.attack());
-//    }
+    public void attackPlayer(Player enemy) {
+        enemy.healthPoints -= weapon.attack();
+    }
 
     public int attack() {
         return this.weapon.attack();

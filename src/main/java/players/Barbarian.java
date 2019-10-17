@@ -26,5 +26,9 @@ public class Barbarian extends Player implements IWeapon {
         return this.weapon;
     }
 
+    public void attackPlayer(Player enemy) {
+        enemy.healthPoints -= weapon.attack();
+    }
+
 
 }
