@@ -3,7 +3,10 @@ package players;
 import behaviours.IDefend;
 import behaviours.ISpell;
 import creatures.Creature;
+import creatures.Goblin;
+import spells.FireBall;
 import spells.Spell;
+import spells.Thunderball;
 
 public class Warlock extends Player implements ISpell, IDefend {
     private Creature creature;
@@ -32,4 +35,19 @@ public class Warlock extends Player implements ISpell, IDefend {
        return this.defense = creature.getDefenseRating();
     }
 
+    public Spell getSpell() {
+        return this.spell;
+    }
+
+    public Creature getCreature() {
+        return this.creature;
+    }
+
+    public void switchCreature(Creature newCreature) {
+        this.creature = newCreature;
+    }
+
+    public void switchSpells(Spell newSpell) {
+        this.spell = newSpell;
+    }
 }
