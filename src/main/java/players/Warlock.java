@@ -1,11 +1,11 @@
 package players;
 
+import behaviours.IDefend;
 import behaviours.ISpell;
 import creatures.Creature;
 import spells.Spell;
 
-public class Warlock extends Player implements ISpell {
-
+public class Warlock extends Player implements ISpell, IDefend {
     private Creature creature;
     private Spell spell;
 
@@ -20,8 +20,16 @@ public class Warlock extends Player implements ISpell {
     }
 
     public void attackPlayer(Player enemy) {
-        enemy.healthPoints -= spell.cast();
+        if (enemy.defense > 0) {
+            int damage = spell.cast() - enemy.defense;
+            enemy.healthPoints -= damage;
+        } else {
+            enemy.healthPoints -= spell.cast();
+        }
     }
 
+    public int defend() {
+       return this.defense = creature.getDefenseRating();
+    }
 
 }

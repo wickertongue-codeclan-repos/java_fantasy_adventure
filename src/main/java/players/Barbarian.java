@@ -27,7 +27,12 @@ public class Barbarian extends Player implements IWeapon {
     }
 
     public void attackPlayer(Player enemy) {
-        enemy.healthPoints -= weapon.attack();
+        if (enemy.defense > 0) {
+            int damage = weapon.attack() - enemy.defense;
+            enemy.healthPoints -= damage;
+        } else {
+            enemy.healthPoints -= weapon.attack();
+        }
     }
 
 

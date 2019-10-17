@@ -1,9 +1,11 @@
 package creatures;
 
-public abstract class Creature {
+import behaviours.IDefend;
+
+public abstract class Creature implements IDefend {
 
     private String name;
-    private int defenseRating;
+    protected int defenseRating;
 
     public Creature(String name, int defenseRating) {
         this.name = name;
@@ -16,5 +18,9 @@ public abstract class Creature {
 
     public int getDefenseRating() {
         return defenseRating;
+    }
+
+    public int defend() {
+        return this.defenseRating;
     }
 }
