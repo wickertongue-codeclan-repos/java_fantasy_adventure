@@ -34,4 +34,10 @@ public class DwarfTest {
         assertEquals(sword, dwarf.getWeapon());
     }
 
+    @Test
+    public void canSwitchWeapon() {
+        dwarf.switchWeapon(axe);
+        assertEquals(axe, dwarf.getWeapon());
+    }
+
 }

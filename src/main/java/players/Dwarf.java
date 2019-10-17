@@ -25,6 +25,10 @@ public class Dwarf extends Player implements IWeapon {
         this.healthPoints -= attackDamage;
     }
 
+    public void switchWeapon(IWeapon newWeapon) {
+        this.weapon = newWeapon;
+    }
+
     public IWeapon getWeapon() {
         return this.weapon;
     }
